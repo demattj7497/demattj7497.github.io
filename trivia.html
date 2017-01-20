@@ -12,16 +12,15 @@
                 margin-top: 20%;
                 color:green;
                 font:.5cm;
-		background-image-size : fill;
-
             }
         </style>
         <script>
             i = 1 // counter variable
-            answerDelay = 200;
-            checkAnswerDelay = answerDelay + 100;
-            totalNumberOfQuestion = 5;
-            numberOCorrectAnswers = 0;
+            
+            totalNumberOfQuestion = 10;
+            numberOfCorrectAnswers = 0;
+			var submit = document.view.Submit.value;
+            var ans = submit;
 
             function main() { // main part of program
 
@@ -40,19 +39,20 @@
 
                     correct = "a" // assigns the correct answer
 
-                   setTimeout( pop, answerDelay);
+
+                   //setTimeout( pop, answerDelay);
 
                    //ans = prompt(i + '.)    ENTER LETTER >>   a,   b,   c,   d') // gives user a chance to answer
 
                 } // end of question 1
                 else if (i == 2) {
                     document.view.qnum.value = i; // puts question # in text box
-                    document.view.question.value = "Which Major League Baseball park is the famous 'Green Giant located?\na) Yankee Stadium\nb) Rogers Center\nc) Dodger Stadium\nd) Fenway Park ";
+                    document.view.question.value = "Which Major League Baseball park is the famous 'Green Giant' located?\na) Yankee Stadium\nb) Rogers Center\nc) Dodger Stadium\nd) Fenway Park ";
 
                     // above code puts the question in the textarea, note the use of \n for "new line"
 
                     correct = "d" // assigns the correct answer
-                    setTimeout( pop, answerDelay);
+                    //setTimeout( pop, answerDelay);
                     //setTimeout( ans = prompt(i + '.)    ENTER LETTER >>   a,   b,   c,   d'), 2000);
 
                    // ans = prompt(i + '.)    ENTER LETTER >>   a,   b,   c,   d') // gives user a chance to answer
@@ -62,33 +62,69 @@
                     document.view.qnum.value = i;
                     document.view.question.value = "Who was the first African-American to play in the MLB?\na) Jackie Robinson \nb) Moses Walker \nc) Barry Bonds \nd) Ken Griffey";
                     correct = "b"
-                    setTimeout( pop, answerDelay);
+                    //setTimeout( pop, answerDelay);
                     // setTimeout( ans = prompt(i + '.)    ENTER LETTER >>   a,   b,   c,   d'), 2000);
                     //ans = prompt(i + '.)    ENTER LETTER >>   a,   b,   c,   d')
                 } else if (i == 4) {
                     document.view.qnum.value = i;
                     document.view.question.value = "Who was the MVP of 2016's World Series between the Chicago Cubs and the Cleveland Indians? \na) Anthony Rizzo \nb) Jason Kipnis \nc) Franscisco Lindor \nd) Ben Zobrist";
                     correct = "d"
-                    setTimeout( pop, answerDelay);
+                    //setTimeout( pop, answerDelay);
                     // setTimeout( ans = prompt(i + '.)    ENTER LETTER >>   a,   b,   c,   d'), 2000);
                     //ans = prompt(i + '.)    ENTER LETTER >>   a,   b,   c,   d')
                 } else if (i == 5) {
                     document.view.qnum.value = i;
                     document.view.question.value = "For which team did Babe Ruth play for before he was traded to the Yankees? \na) San Franscisco Giants \nb) Brooklyn Dodgers \nc) Boston Red Sox \nd) Cleveland Indians";
-                    answer = "c"
-                    setTimeout( pop, answerDelay);
+                    correct = "c"
+					//setTimeout( pop, answerDelay);
+                    
                     // setTimeout( ans = prompt(i + '.)    ENTER LETTER >>   a,   b,   c,   d'), 2000);
                     //ans = prompt(i + '.)    ENTER LETTER >>   a,   b,   c,   d')
-                }
+                } else if (i == 6) {
+					document.view.qnum.value =  i;
+					document.view.question.value = "Which Major League Baseball Park is the newest and was officially opened in 2012? \na) Rogers Center \nb) Marlins Park \nc) Minute Maid Park \nd) PNC Park";
+					correct = "b"
+					//setTimeout( pop, answerDelay);
+				}  else if (i == 7) {
+					document.view.qnum.value =  i;
+					document.view.question.value = "How many Canadian teams are there in the MLB? \na) 1 \nb) 3 \nc) 2 \nd) 0"
+					correct = "a"
+					//setTimeout (  pop , answerDelay);
+				} else if (i == 8) {
+					document.view.qnum.value = i;
+					document.view.question.value = "Which Canadian team used to be a part of the MLB but was removed in 2004? \na) Pittsburgh Pirates \nb) Toronto Blue Jays \nc) Minnesota North Stars \nd) Montreal Expos"
+					correct = "d"
+					//setTimeout ( pop , answerDelay);
+				} else if (i == 9) {
+					document.view.qnum.value = i;
+					document.view.question.value = "Who is the award for best pitcher of the year named after? \na) Cal Ripken \nb) Joe DiMaggio \nc) Cy Young \nd) Babe Ruth"
+					correct = "c"
+					//setTimeout ( pop , answerDelay);
+				} else if (i == 10) {
+					document.view.qnum.value = i;
+					document.view.question.value = "How does a player get a spot on the annual All-Star Team? \na) Voted by a commitee \nb) Voted by the fans \nc) Voted by the players \nd) Selected at random"
+					correct = "b"
+					//setTimeout ( pop , answerDelay);
+				} else if (i == 11) {
+					correctAnswers()
+				}
+				
+					
+				
+					
+				
+					
+					
+					
 
         
-                 setTimeout( checkAnswer, checkAnswerDelay);
+                 //setTimeout( checkAnswer, checkAnswerDelay);
 
             } //end of main function
 
             function pop() {
 
-                ans = prompt(i + '.)    ENTER LETTER >>   a,   b,   c,   d') // gives user a chance to answer
+                 prompt(i + '.)    ENTER LETTER >>   a,   b,   c,   d') // gives user a chance to answer
 
             }
 
@@ -97,13 +133,13 @@
                //document.view.go.focus(); // puts the focus on the "Next Question >" button so the enter key will activate it
                console.log("checkAnswer untion called");
 
-                if (correct == ans) { // compares the real answer to the users answer
+                if (ans == correct) { // compares the real answer to the users answer
 
                     document.view.question.value = " You are right!" // puts comment in textarea
-                    numberOCorrectAnswers++;
+                    numberOfCorrectAnswers++;
 
                 } else {
-                    document.view.question.value = " You are wrong" // puts comment in textarea
+                    document.view.question.value = " You are wrong :(" // puts comment in textarea
                 }
 
                 i++; // keeps track of number of questions asked
@@ -113,16 +149,28 @@
 
             function calulatePercent() {
 
-               percentage = numberOCorrectAnswers / totalNumberOfQuestion * 100;
+               percentage = numberOfCorrectAnswers / totalNumberOfQuestion * 100;
 
-              console.log("yout percentage is: " + percentage + "%");
+              console.log("your percentage is: " + percentage + "%");
+			}
+			
+			function correctAnswers() {
+				
+			if (numberOfCorrectAnswers >= 8) {
+				alert("Congratulations, you've passed this quiz and are now a certified MLB expert!!!!")
+			}
+			else {
+				alert("Sorry, you didn't score high enough to pass. Please try again!?!")
+			}
+			}
+        
 
-              if (percentage >= 80) {
-
-              }
-            }
-
-        </script>
+			
+			
+			
+              
+	
+     </script>  
     </head>
 
     <body LINK="F7DD5E" VLINK="F7DD5E" ALINK="F7DD5E" onLoad="main()">
@@ -131,8 +179,12 @@
             <input type="text" name="qnum" size="2">&nbsp;&nbsp;
             <input type="button" name="go" value="Next Question >" onClick=main()>
             <br>
+            Your Answer:<TEXTAREA COLS=2 ROWS=1 name="input" wrap="virtual"></TEXTAREA>
+            <input type="button" name="Submit" value="Submit Answer" onClick=checkAnswer() >
+            <br>
             <br>
             <TEXTAREA COLS=36 ROWS=9 name="question" wrap="virtual"></TEXTAREA>
+            
         </FORM>
 
     </body>
